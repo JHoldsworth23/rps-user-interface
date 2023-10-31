@@ -1,0 +1,15 @@
+body {
+    background-color: rgb(218, 187, 150);
+    font-family: 'Segoe UI', Verdana, sans-serif;
+    text-align: center;
+    margin: 0;
+}
+
+/* title section */
+#title {
+    background-color: rgb(207, 166, 115);
+    display: flex;
+    justify-content: center;
+    gap: 28px;
+    font-size: 26px;
+}
