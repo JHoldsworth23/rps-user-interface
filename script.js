@@ -28,9 +28,9 @@ rock.addEventListener('click', () => {
     textArray = div.textContent.split(" ")
 
     if (textArray.includes("win!")) {
-        playerScore += 1;
+        playerScore++;
     } else if (textArray.includes("lose!")) {
-        computerScore += 1;
+        computerScore++;
     }
 
     scoreboard.textContent = `${playerScore} - ${computerScore}`;
@@ -44,9 +44,9 @@ paper.addEventListener('click', () => {
     textArray = div.textContent.split(" ")
 
     if (textArray.includes("win!")) {
-        playerScore += 1;
+        playerScore++;
     } else if (textArray.includes("lose!")) {
-        computerScore += 1;
+        computerScore++;
     }
 
     scoreboard.textContent = `${playerScore} - ${computerScore}`;
@@ -60,11 +60,15 @@ scissors.addEventListener('click', () => {
     textArray = div.textContent.split(" ")
 
     if (textArray.includes("win!")) {
-        playerScore += 1;
+        playerScore++;
     } else if (textArray.includes("lose!")) {
-        computerScore += 1;
+        computerScore++;
     }
 
     scoreboard.textContent = `${playerScore} - ${computerScore}`;
     container.appendChild(scoreboard);
 });
+
+if (playerScore === 5 || computerScore === 5) {
+
+}
