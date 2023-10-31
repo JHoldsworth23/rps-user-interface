@@ -10,12 +10,6 @@ function determineOutcome(playerSelection, computerSelection) {
         `You lose! ${computerSelection.toUpperCase()} beats ${playerSelection.toUpperCase()}`;
 }
 
-function game() {
-    for ( let i = 0; i < 5; i++) {
-        const playerSelection = prompt("Rock, Paper or Scissors?").toLowerCase();
-        const computerSelection = getComputerChoice();
-        console.log(determineOutcome(playerSelection, computerSelection));
-    }
-}
-
-game();
+const rock = document.querySelector('#rock');
+const paper = document.querySelector('#paper');
+const scissors = document.querySelector('#scissors');
