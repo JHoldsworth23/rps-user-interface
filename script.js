@@ -23,3 +23,13 @@ function determineOutcome(playerSelection, computerSelection) {
 
     return  `You lose! ${computerSelection.toUpperCase()} beats ${playerSelection.toUpperCase()}`;
 }
+
+function game() {
+    for ( let i = 0; i < 5; i++) {
+        const playerSelection = prompt("Rock, Paper or Scissors?").toLowerCase();
+        const computerSelection = getComputerChoice();
+        console.log(playRound(playerSelection, computerSelection));
+    }
+}
+
+game();
