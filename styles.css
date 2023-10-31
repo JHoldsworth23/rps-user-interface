@@ -76,7 +76,7 @@ body {
     gap: 28px;
 }
 
-button {
+.btn {
     width: 150px;
     height: 150px;
     cursor: pointer;
@@ -92,7 +92,7 @@ button {
     margin: 8px 12px;
 }
 
-button span {
+.element {
     font-size: 40px;
     padding: 8px;
 }
