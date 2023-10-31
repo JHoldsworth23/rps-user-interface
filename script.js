@@ -14,17 +14,23 @@ const rock = document.querySelector('#rock');
 const paper = document.querySelector('#paper');
 const scissors = document.querySelector('#scissors');
 
+const container = document.querySelector('#container');
+const div = document.createElement('div');
+
+let playerScore = 0;
+let computerScore = 0;
+
 rock.addEventListener('click', () => {
-    const result = determineOutcome('rock', getComputerChoice());
-    console.log(result);
+    div.textContent = determineOutcome('rock', getComputerChoice());
+    container.appendChild(div);
 });
 
 paper.addEventListener('click', () => {
-    const result = determineOutcome('rock', getComputerChoice());
-    console.log(result);
+    div.textContent = determineOutcome('paper', getComputerChoice());
+    container.appendChild(div);
 });
 
 scissors.addEventListener('click', () => {
-    const result = determineOutcome('rock', getComputerChoice());
-    console.log(result);
+    div.textContent = determineOutcome('scissors', getComputerChoice());
+    container.appendChild(div);
 });
