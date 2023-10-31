@@ -43,6 +43,24 @@ body {
     margin: 10px;
 }
 
+.scoreboard {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+}
+
+.display h1 {
+    font-size: 80px;
+    margin: 36px 0 0;
+}
+
+.score {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 16px 0 36px;
+}
+
 .cycle-rule {
     display: flex;
     justify-content: center;
@@ -70,6 +88,12 @@ button {
     font-size: 28px;
     border: none;
     border-radius: 10%;
+    margin: 8px 12px;
+}
+
+button span {
+    font-size: 40px;
+    padding: 8px;
 }
 
 #water:hover {
