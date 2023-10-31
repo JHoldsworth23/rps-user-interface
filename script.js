@@ -2,15 +2,15 @@ function getComputerChoice() {
     const random = Math.floor(Math.random() * 3);
     switch (random) {
         case 0:
-            return 'ROCK';
+            return 'rock';
         case 1: 
-            return 'PAPER';
+            return 'paper';
         case 2: 
-            return 'SCISSORS';
+            return 'scissors';
     }
 }
 
-function playRound(playerSelection, computerSelection) {
+function determineOutcome(playerSelection, computerSelection) {
     if (playerSelection === computerSelection) {
         return "It's a tie";
     }
@@ -23,5 +23,3 @@ function playRound(playerSelection, computerSelection) {
 
     return  `You lose! ${computerSelection.toUpperCase()} beats ${playerSelection.toUpperCase()}`;
 }
-
-console.log(playRound("rock", getComputerChoice().toLowerCase()));
