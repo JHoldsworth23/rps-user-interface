@@ -6,10 +6,28 @@ body {
 }
 
 /* title section */
-#title {
+#title-section {
     background-color: rgb(207, 166, 115);
     display: flex;
     justify-content: center;
+    align-items: center;
     gap: 28px;
     font-size: 26px;
+}
+
+#title-section h1 {
+    margin: 20px 0;
+    -webkit-text-stroke: 3px black;
+}
+
+.blue-color {
+    color: #1874dd;
+}
+
+.red-color {
+    color: #f14d0c;
+}
+
+.green-color {
+    color: rgb(16, 151, 23)
 }
