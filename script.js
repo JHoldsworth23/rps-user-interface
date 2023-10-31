@@ -15,13 +15,16 @@ const paper = document.querySelector('#paper');
 const scissors = document.querySelector('#scissors');
 
 rock.addEventListener('click', () => {
-    console.log('rock')
+    const result = determineOutcome('rock', getComputerChoice());
+    console.log(result);
 });
 
 paper.addEventListener('click', () => {
-    console.log('paper')
+    const result = determineOutcome('rock', getComputerChoice());
+    console.log(result);
 });
 
 scissors.addEventListener('click', () => {
-    console.log('scissors')
+    const result = determineOutcome('rock', getComputerChoice());
+    console.log(result);
 });
