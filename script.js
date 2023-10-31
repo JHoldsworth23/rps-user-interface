@@ -10,6 +10,17 @@ function determineOutcome(playerSelection, computerSelection) {
         `You lose! ${computerSelection.toUpperCase()} beats ${playerSelection.toUpperCase()}`;
 }
 
+function finalMessage() {
+    return playerScore > computerScore 
+        ? "You won!" 
+        : "You lost..."
+}
+
+function restartGame() {
+    playerScore = 0;
+    computerScore = 0;
+}
+
 const rock = document.querySelector('#rock');
 const paper = document.querySelector('#paper');
 const scissors = document.querySelector('#scissors');
@@ -19,6 +30,7 @@ const div = document.createElement('div');
 
 let playerScore = 0;
 let computerScore = 0;
+let roundWinner = '';
 const scoreboard = document.createElement('h2');
 
 rock.addEventListener('click', () => {
@@ -35,6 +47,11 @@ rock.addEventListener('click', () => {
 
     scoreboard.textContent = `${playerScore} - ${computerScore}`;
     container.appendChild(scoreboard);
+
+    if (playerScore === 5 || computerScore === 5) {
+        scoreboard.textContent = finalMessage();
+        restartGame();
+    }
 });
 
 paper.addEventListener('click', () => {
@@ -51,6 +68,11 @@ paper.addEventListener('click', () => {
 
     scoreboard.textContent = `${playerScore} - ${computerScore}`;
     container.appendChild(scoreboard);
+
+    if (playerScore === 5 || computerScore === 5) {
+        scoreboard.textContent = finalMessage();
+        restartGame();
+    }
 });
 
 scissors.addEventListener('click', () => {
@@ -67,8 +89,9 @@ scissors.addEventListener('click', () => {
 
     scoreboard.textContent = `${playerScore} - ${computerScore}`;
     container.appendChild(scoreboard);
+
+    if (playerScore === 5 || computerScore === 5) {
+        scoreboard.textContent = finalMessage();
+        restartGame();
+    }
 });
-
-if (playerScore === 5 || computerScore === 5) {
-
-}
