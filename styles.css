@@ -20,16 +20,25 @@ body {
     -webkit-text-stroke: 3px black;
 }
 
-.blue-color {
+.blue-text {
     color: #1874dd;
 }
 
-.red-color {
+.red-text {
     color: #f14d0c;
 }
 
-.green-color {
+.green-text {
     color: rgb(16, 151, 23)
+}
+
+/* MAIN SECTION */
+.cycle-rule {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    font-size: 20px;
 }
 
 /* FOOTER SECTION */
