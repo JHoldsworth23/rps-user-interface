@@ -31,3 +31,23 @@ body {
 .green-color {
     color: rgb(16, 151, 23)
 }
+
+/* FOOTER SECTION */
+#footer-section {
+    background-color: rgb(207, 166, 115);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    font-size: 18px;
+    margin-top: 20px;
+}
+
+.fa-github {
+    color: #000;
+    font-size: 24px;
+}
+
+.fa-github:hover {
+    color: #FFFFFF;
+}
