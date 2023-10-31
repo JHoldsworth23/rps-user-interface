@@ -29,7 +29,7 @@ body {
 }
 
 .green-text {
-    color: rgb(16, 151, 23)
+    color: rgb(16, 151, 23);
 }
 
 /* MAIN SECTION */
@@ -70,6 +70,21 @@ button {
     font-size: 28px;
     border: none;
     border-radius: 10%;
+}
+
+#water:hover {
+    background-color: #1874dd;
+    border: 3px solid #000;
+}
+
+#fire:hover {
+    background-color: #f14d0c;
+    border: 3px solid #000;
+}
+
+#earth:hover {
+    background-color: rgb(16, 151, 23);
+    border: 3px solid #000;
 }
 
 /* FOOTER SECTION */
