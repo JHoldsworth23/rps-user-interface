@@ -19,18 +19,52 @@ const div = document.createElement('div');
 
 let playerScore = 0;
 let computerScore = 0;
+const scoreboard = document.createElement('h2');
 
 rock.addEventListener('click', () => {
     div.textContent = determineOutcome('rock', getComputerChoice());
     container.appendChild(div);
+
+    textArray = div.textContent.split(" ")
+
+    if (textArray.includes("win!")) {
+        playerScore += 1;
+    } else if (textArray.includes("lose!")) {
+        computerScore += 1;
+    }
+
+    scoreboard.textContent = `${playerScore} - ${computerScore}`;
+    container.appendChild(scoreboard);
 });
 
 paper.addEventListener('click', () => {
     div.textContent = determineOutcome('paper', getComputerChoice());
     container.appendChild(div);
+
+    textArray = div.textContent.split(" ")
+
+    if (textArray.includes("win!")) {
+        playerScore += 1;
+    } else if (textArray.includes("lose!")) {
+        computerScore += 1;
+    }
+
+    scoreboard.textContent = `${playerScore} - ${computerScore}`;
+    container.appendChild(scoreboard);
 });
 
 scissors.addEventListener('click', () => {
     div.textContent = determineOutcome('scissors', getComputerChoice());
     container.appendChild(div);
+    
+    textArray = div.textContent.split(" ")
+
+    if (textArray.includes("win!")) {
+        playerScore += 1;
+    } else if (textArray.includes("lose!")) {
+        computerScore += 1;
+    }
+
+    scoreboard.textContent = `${playerScore} - ${computerScore}`;
+    container.appendChild(scoreboard);
 });
