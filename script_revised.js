@@ -35,6 +35,12 @@ function updateScore(result) {
     return (playerScore === 5 || computerScore === 5) ? true : false;
 }
 
+function gameOver() {
+    water_element.disabled = true;
+    fire_element.disabled = true;
+    earth_element.disabled = true;
+}
+
 function finalMessage() {
     return playerScore > computerScore 
         ? "You are the Master of Elements" 
@@ -67,9 +73,7 @@ water_element.addEventListener("click", () => {
 
     if (updateScore(roundResult.textContent)) {
         console.log("End the GAME!");
-        water_element.disabled = true;
-        fire_element.disabled = true;
-        earth_element.disabled = true;
+        gameOver();
     }
 });
 
@@ -84,9 +88,7 @@ fire_element.addEventListener("click", () => {
 
     if (updateScore(roundResult.textContent)) {
         console.log("End the GAME!");
-        water_element.disabled = true;
-        fire_element.disabled = true;
-        earth_element.disabled = true;
+        gameOver();
     }
 });
 
@@ -101,8 +103,6 @@ earth_element.addEventListener("click", () => {
 
     if (updateScore(roundResult.textContent)) {
         console.log("End the GAME!");
-        water_element.disabled = true;
-        fire_element.disabled = true;
-        earth_element.disabled = true;
+        gameOver();
     }
 });
