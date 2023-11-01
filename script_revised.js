@@ -31,6 +31,8 @@ function updateScore(result) {
         computerScore++;
         computerScoreDisplay.textContent = `Computer: ${computerScore}`;
     }
+
+    return (playerScore === 5 || computerScore === 5) ? true : false;
 }
 
 function finalMessage() {
@@ -63,7 +65,12 @@ water_element.addEventListener("click", () => {
     computerElement.textContent = emojiElement(computerSelection);
     result.appendChild(roundResult);
 
-    updateScore(roundResult.textContent);
+    if (updateScore(roundResult.textContent)) {
+        console.log("End the GAME!");
+        water_element.disabled = true;
+        fire_element.disabled = true;
+        earth_element.disabled = true;
+    }
 });
 
 fire_element.addEventListener("click", () => {
@@ -75,17 +82,27 @@ fire_element.addEventListener("click", () => {
     computerElement.textContent = emojiElement(computerSelection);
     result.appendChild(roundResult);
 
-    updateScore(roundResult.textContent);
+    if (updateScore(roundResult.textContent)) {
+        console.log("End the GAME!");
+        water_element.disabled = true;
+        fire_element.disabled = true;
+        earth_element.disabled = true;
+    }
 });
 
 earth_element.addEventListener("click", () => {
     const playerSelection = "earth";
     const computerSelection = getComputerChoice();
-    
+
     roundResult.textContent = determineOutcome(playerSelection, computerSelection);
     playerElement.textContent = emojiElement(playerSelection);
     computerElement.textContent = emojiElement(computerSelection);
     result.appendChild(roundResult);
 
-    updateScore(roundResult.textContent);
+    if (updateScore(roundResult.textContent)) {
+        console.log("End the GAME!");
+        water_element.disabled = true;
+        fire_element.disabled = true;
+        earth_element.disabled = true;
+    }
 });
