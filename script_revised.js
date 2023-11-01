@@ -24,17 +24,26 @@ const earth_element = document.querySelector('#earth');
 const result = document.querySelector('.result-text');
 const roundResult = document.createElement('h3');
 
+const playerElement = document.querySelector('.player-choice');
+const computerElement = document.querySelector('.computer-choice')
+
 water_element.addEventListener('click', () => {
-    roundResult.textContent = determineOutcome('water', getComputerChoice());
+    const computerSelection = getComputerChoice();
+    roundResult.textContent = determineOutcome('water', computerSelection);
+    playerElement.textContent = '💧';
     result.appendChild(roundResult);
 });
 
 fire_element.addEventListener('click', () => {
-    roundResult.textContent = determineOutcome('fire', getComputerChoice());
+    const computerSelection = getComputerChoice();
+    roundResult.textContent = determineOutcome('fire', computerSelection);
+    playerElement.textContent = '🔥';
     result.appendChild(roundResult);
 });
 
 earth_element.addEventListener('click', () => {
-    roundResult.textContent = determineOutcome('earth', getComputerChoice());
+    const computerSelection = getComputerChoice();
+    roundResult.textContent = determineOutcome('earth', computerSelection);
+    playerElement.textContent = '🍃';
     result.appendChild(roundResult);
 });
