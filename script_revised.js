@@ -27,6 +27,9 @@ function updateScore(result) {
     if (textArray.includes("win")) {
         playerScore++;
         playerScoreDisplay.textContent = `Player: ${playerScore}`;
+    } else if (textArray.includes("lose")) {
+        computerScore++;
+        computerScoreDisplay.textContent = `Computer: ${computerScore}`;
     }
 }
 
@@ -54,29 +57,35 @@ let computerScore = 0;
 water_element.addEventListener("click", () => {
     const playerSelection = "water";
     const computerSelection = getComputerChoice();
+
     roundResult.textContent = determineOutcome(playerSelection, computerSelection);
     playerElement.textContent = emojiElement(playerSelection);
     computerElement.textContent = emojiElement(computerSelection);
     result.appendChild(roundResult);
 
     updateScore(roundResult.textContent);
-    console.log(roundResult.textContent);
 });
 
 fire_element.addEventListener("click", () => {
     const playerSelection = "fire";
     const computerSelection = getComputerChoice();
+
     roundResult.textContent = determineOutcome(playerSelection, computerSelection);
     playerElement.textContent = emojiElement(playerSelection);
     computerElement.textContent = emojiElement(computerSelection);
     result.appendChild(roundResult);
+
+    updateScore(roundResult.textContent);
 });
 
 earth_element.addEventListener("click", () => {
     const playerSelection = "earth";
     const computerSelection = getComputerChoice();
+    
     roundResult.textContent = determineOutcome(playerSelection, computerSelection);
     playerElement.textContent = emojiElement(playerSelection);
     computerElement.textContent = emojiElement(computerSelection);
     result.appendChild(roundResult);
+
+    updateScore(roundResult.textContent);
 });
