@@ -20,3 +20,21 @@ function finalMessage() {
 const water_element = document.querySelector('#water');
 const fire_element = document.querySelector('#fire');
 const earth_element = document.querySelector('#earth');
+
+const result = document.querySelector('.result-text');
+const roundResult = document.createElement('h3');
+
+water_element.addEventListener('click', () => {
+    roundResult.textContent = determineOutcome('water', getComputerChoice());
+    result.appendChild(roundResult);
+});
+
+fire_element.addEventListener('click', () => {
+    roundResult.textContent = determineOutcome('fire', getComputerChoice());
+    result.appendChild(roundResult);
+});
+
+earth_element.addEventListener('click', () => {
+    roundResult.textContent = determineOutcome('earth', getComputerChoice());
+    result.appendChild(roundResult);
+});
