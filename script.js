@@ -1,97 +1,108 @@
 function getComputerChoice() {
-    return ['rock', 'paper', 'scissors'][Math.floor(Math.random() * 3)];
+    return ["water", "fire", "earth"][Math.floor(Math.random() * 3)];
+}
+
+function emojiElement(element) {
+    switch (element) {
+        case "water":
+            return "💧";
+        case "fire":
+            return "🔥";
+        case "earth":
+            return "🍃";
+    }
 }
 
 function determineOutcome(playerSelection, computerSelection) {
-    return playerSelection === computerSelection ? "It's a tie" : 
-        (playerSelection === "rock" && computerSelection === "scissors") || 
-        (playerSelection === "paper" && computerSelection === "rock") || 
-        (playerSelection === "scissors" && computerSelection === "paper") ? `You win! ${playerSelection.toUpperCase()} beats ${computerSelection.toUpperCase()}` :
-        `You lose! ${computerSelection.toUpperCase()} beats ${playerSelection.toUpperCase()}`;
+    return playerSelection === computerSelection ? "It's a tie" :
+        (playerSelection === "water" && computerSelection === "fire") || 
+        (playerSelection === "fire" && computerSelection === "earth") || 
+        (playerSelection === "earth" && computerSelection === "water") ? 
+        `You win this round! ${playerSelection.toUpperCase()} beats ${computerSelection.toUpperCase()}` :
+        `You lose this round! ${playerSelection.toUpperCase()} is beaten by ${computerSelection.toUpperCase()}`;
+}
+
+function updateScore(result) {
+    textArray = result.split(" ");
+    if (textArray.includes("win")) {
+        playerScore++;
+        playerScoreDisplay.textContent = `Player: ${playerScore}`;
+    } else if (textArray.includes("lose")) {
+        computerScore++;
+        computerScoreDisplay.textContent = `Computer: ${computerScore}`;
+    }
+
+    return (playerScore === 5 || computerScore === 5) ? true : false;
+}
+
+function gameOver() {
+    water_element.disabled = true;
+    fire_element.disabled = true;
+    earth_element.disabled = true;
 }
 
 function finalMessage() {
     return playerScore > computerScore 
-        ? "You won!" 
-        : "You lost..."
+        ? "You are the Master of Elements" 
+        : "Your computer is the Master of Elements";
 }
 
-function restartGame() {
-    playerScore = 0;
-    computerScore = 0;
-}
+const water_element = document.querySelector("#water");
+const fire_element = document.querySelector("#fire");
+const earth_element = document.querySelector("#earth");
 
-const rock = document.querySelector('#rock');
-const paper = document.querySelector('#paper');
-const scissors = document.querySelector('#scissors');
+const result = document.querySelector(".result-text");
+const roundResult = document.createElement("h3");
 
-const container = document.querySelector('#container');
-const div = document.createElement('div');
+const playerElement = document.querySelector(".player-choice");
+const computerElement = document.querySelector(".computer-choice");
 
+const playerScoreDisplay = document.querySelector(".player-score");
+const computerScoreDisplay = document.querySelector(".computer-score");
 let playerScore = 0;
 let computerScore = 0;
-let roundWinner = '';
-const scoreboard = document.createElement('h2');
 
-rock.addEventListener('click', () => {
-    div.textContent = determineOutcome('rock', getComputerChoice());
-    container.appendChild(div);
+water_element.addEventListener("click", () => {
+    const playerSelection = "water";
+    const computerSelection = getComputerChoice();
 
-    textArray = div.textContent.split(" ")
+    roundResult.textContent = determineOutcome(playerSelection, computerSelection);
+    playerElement.textContent = emojiElement(playerSelection);
+    computerElement.textContent = emojiElement(computerSelection);
+    result.appendChild(roundResult);
 
-    if (textArray.includes("win!")) {
-        playerScore++;
-    } else if (textArray.includes("lose!")) {
-        computerScore++;
-    }
-
-    scoreboard.textContent = `${playerScore} - ${computerScore}`;
-    container.appendChild(scoreboard);
-
-    if (playerScore === 5 || computerScore === 5) {
-        scoreboard.textContent = finalMessage();
-        restartGame();
+    if (updateScore(roundResult.textContent)) {
+        console.log("End the GAME!");
+        gameOver();
     }
 });
 
-paper.addEventListener('click', () => {
-    div.textContent = determineOutcome('paper', getComputerChoice());
-    container.appendChild(div);
+fire_element.addEventListener("click", () => {
+    const playerSelection = "fire";
+    const computerSelection = getComputerChoice();
 
-    textArray = div.textContent.split(" ")
+    roundResult.textContent = determineOutcome(playerSelection, computerSelection);
+    playerElement.textContent = emojiElement(playerSelection);
+    computerElement.textContent = emojiElement(computerSelection);
+    result.appendChild(roundResult);
 
-    if (textArray.includes("win!")) {
-        playerScore++;
-    } else if (textArray.includes("lose!")) {
-        computerScore++;
-    }
-
-    scoreboard.textContent = `${playerScore} - ${computerScore}`;
-    container.appendChild(scoreboard);
-
-    if (playerScore === 5 || computerScore === 5) {
-        scoreboard.textContent = finalMessage();
-        restartGame();
+    if (updateScore(roundResult.textContent)) {
+        console.log("End the GAME!");
+        gameOver();
     }
 });
 
-scissors.addEventListener('click', () => {
-    div.textContent = determineOutcome('scissors', getComputerChoice());
-    container.appendChild(div);
-    
-    textArray = div.textContent.split(" ")
+earth_element.addEventListener("click", () => {
+    const playerSelection = "earth";
+    const computerSelection = getComputerChoice();
 
-    if (textArray.includes("win!")) {
-        playerScore++;
-    } else if (textArray.includes("lose!")) {
-        computerScore++;
-    }
+    roundResult.textContent = determineOutcome(playerSelection, computerSelection);
+    playerElement.textContent = emojiElement(playerSelection);
+    computerElement.textContent = emojiElement(computerSelection);
+    result.appendChild(roundResult);
 
-    scoreboard.textContent = `${playerScore} - ${computerScore}`;
-    container.appendChild(scoreboard);
-
-    if (playerScore === 5 || computerScore === 5) {
-        scoreboard.textContent = finalMessage();
-        restartGame();
+    if (updateScore(roundResult.textContent)) {
+        console.log("End the GAME!");
+        gameOver();
     }
 });
