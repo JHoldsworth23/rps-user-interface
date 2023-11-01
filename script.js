@@ -47,6 +47,9 @@ function finalMessage() {
         : "Your computer is the Master of Elements";
 }
 
+const mainSection = document.querySelector('#main-section');
+const original = mainSection.innerHTML;
+
 const water_element = document.querySelector("#water");
 const fire_element = document.querySelector("#fire");
 const earth_element = document.querySelector("#earth");
