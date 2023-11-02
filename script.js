@@ -13,13 +13,17 @@ function emojiElement(element) {
     }
 }
 
+function capitalizeWord(text) {
+    return text[0].toUpperCase() + text.slice(1);
+}
+
 function determineOutcome(playerSelection, computerSelection) {
     return playerSelection === computerSelection ? "It's a tie" :
         (playerSelection === "water" && computerSelection === "fire") || 
         (playerSelection === "fire" && computerSelection === "earth") || 
         (playerSelection === "earth" && computerSelection === "water") ? 
-        `You win this round! ${playerSelection.toUpperCase()} beats ${computerSelection.toUpperCase()}` :
-        `You lose this round! ${playerSelection.toUpperCase()} is beaten by ${computerSelection.toUpperCase()}`;
+        `You win this round! ${capitalizeWord(playerSelection)} beats ${capitalizeWord(computerSelection)}` :
+        `You lose this round! ${capitalizeWord(playerSelection)} is beaten by ${capitalizeWord(computerSelection)}`;
 }
 
 function updateScore(result) {
@@ -36,10 +40,6 @@ function updateScore(result) {
 }
 
 function gameOver() {
-    waterElement.disabled = true;
-    fireElement.disabled = true;
-    earthElement.disabled = true;
-
     mainSection.innerHTML = `
         <div>
             <h1>${finalMessage()}</h1>
