@@ -1,7 +1,3 @@
-function getComputerChoice() {
-    return ["water", "fire", "earth"][Math.floor(Math.random() * 3)];
-}
-
 function emojiElement(element) {
     switch (element) {
         case "water":
@@ -18,7 +14,7 @@ function capitalizeWord(text) {
 }
 
 function playRound(playerSelection) {
-    const computerSelection = getComputerChoice();
+    const computerSelection = ["water", "fire", "earth"][Math.floor(Math.random() * 3)];;
     
     roundResult.textContent = determineOutcome(playerSelection, computerSelection);
     playerElement.textContent = emojiElement(playerSelection);
