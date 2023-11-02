@@ -58,6 +58,7 @@ function gameOver() {
                 <p class="score-text">Player: ${playerScore} </p>
                 <p class="score-text">Computer: ${computerScore}</p>
             </div>
+            <hr>
             <button class="restart-btn">Play Again?</button>
         </div>
     `;
