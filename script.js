@@ -44,8 +44,11 @@ function gameOver() {
         <div>
             <h1>${finalMessage()}</h1>
             <h3>Final Score:</h3>
-            <p>Player: ${playerScore} - Computer: ${computerScore}</p>
-            <button>Play Again?</button>
+            <div>
+                <p>Player: ${playerScore} </p>
+                <p>Computer: ${computerScore}</p>
+            </div>
+            <button class="restart-btn">Play Again?</button>
         </div>
     `;
 }
@@ -53,7 +56,7 @@ function gameOver() {
 function finalMessage() {
     return playerScore > computerScore 
         ? "You are the Master of Elements" 
-        : "Your computer is the Master of Elements";
+        : "Your Computer is the Master of Elements";
 }
 
 const mainSection = document.querySelector('#main-section');
