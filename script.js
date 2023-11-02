@@ -17,6 +17,19 @@ function capitalizeWord(text) {
     return text[0].toUpperCase() + text.slice(1);
 }
 
+function playRound(playerSelection) {
+    const computerSelection = getComputerChoice();
+    
+    roundResult.textContent = determineOutcome(playerSelection, computerSelection);
+    playerElement.textContent = emojiElement(playerSelection);
+    computerElement.textContent = emojiElement(computerSelection);
+    result.appendChild(roundResult);
+
+    if (updateScore(roundResult.textContent)) {
+        gameOver();
+    }
+}
+
 function determineOutcome(playerSelection, computerSelection) {
     return playerSelection === computerSelection ? "It's a tie" :
         (playerSelection === "water" && computerSelection === "fire") || 
@@ -40,6 +53,7 @@ function updateScore(result) {
 }
 
 function gameOver() {
+    const mainSection = document.querySelector('#main-section');
     mainSection.innerHTML = `
         <div>
             <h1>${finalMessage()}</h1>
@@ -64,9 +78,6 @@ function finalMessage() {
         : "Your Computer is the Master of Elements";
 }
 
-const mainSection = document.querySelector('#main-section');
-const original = mainSection.innerHTML;
-
 const waterElement = document.querySelector("#water");
 const fireElement = document.querySelector("#fire");
 const earthElement = document.querySelector("#earth");
@@ -83,46 +94,13 @@ let playerScore = 0;
 let computerScore = 0;
 
 waterElement.addEventListener("click", () => {
-    const playerSelection = "water";
-    const computerSelection = getComputerChoice();
-
-    roundResult.textContent = determineOutcome(playerSelection, computerSelection);
-    playerElement.textContent = emojiElement(playerSelection);
-    computerElement.textContent = emojiElement(computerSelection);
-    result.appendChild(roundResult);
-
-    if (updateScore(roundResult.textContent)) {
-        console.log("End the GAME!");
-        gameOver();
-    }
+    playRound('water');
 });
 
 fireElement.addEventListener("click", () => {
-    const playerSelection = "fire";
-    const computerSelection = getComputerChoice();
-
-    roundResult.textContent = determineOutcome(playerSelection, computerSelection);
-    playerElement.textContent = emojiElement(playerSelection);
-    computerElement.textContent = emojiElement(computerSelection);
-    result.appendChild(roundResult);
-
-    if (updateScore(roundResult.textContent)) {
-        console.log("End the GAME!");
-        gameOver();
-    }
+    playRound('fire');
 });
 
 earthElement.addEventListener("click", () => {
-    const playerSelection = "earth";
-    const computerSelection = getComputerChoice();
-
-    roundResult.textContent = determineOutcome(playerSelection, computerSelection);
-    playerElement.textContent = emojiElement(playerSelection);
-    computerElement.textContent = emojiElement(computerSelection);
-    result.appendChild(roundResult);
-
-    if (updateScore(roundResult.textContent)) {
-        console.log("End the GAME!");
-        gameOver();
-    }
+    playRound('earth');
 });
