@@ -51,12 +51,12 @@ function updateScore(result) {
 function gameOver() {
     const mainSection = document.querySelector('#main-section');
     mainSection.innerHTML = `
-        <div>
-            <h1>${finalMessage()}</h1>
-            <h3>Final Score:</h3>
-            <div>
-                <p>Player: ${playerScore} </p>
-                <p>Computer: ${computerScore}</p>
+        <div class="restart">
+            <h1 class="winner-text">${finalMessage()}</h1>
+            <h3 class="score-heading">Final Score:</h3>
+            <div class="final-score">
+                <p class="score-text">Player: ${playerScore} </p>
+                <p class="score-text">Computer: ${computerScore}</p>
             </div>
             <button class="restart-btn">Play Again?</button>
         </div>
