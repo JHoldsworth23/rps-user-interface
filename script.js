@@ -51,6 +51,11 @@ function gameOver() {
             <button class="restart-btn">Play Again?</button>
         </div>
     `;
+    
+    const restart = document.querySelector('.restart-btn');
+    restart.addEventListener('click', () => {
+        window.location.reload();
+    });
 }
 
 function finalMessage() {
