@@ -36,9 +36,9 @@ function updateScore(result) {
 }
 
 function gameOver() {
-    water_element.disabled = true;
-    fire_element.disabled = true;
-    earth_element.disabled = true;
+    waterElement.disabled = true;
+    fireElement.disabled = true;
+    earthElement.disabled = true;
 
     mainSection.innerHTML = `
         <div>
@@ -62,9 +62,9 @@ function finalMessage() {
 const mainSection = document.querySelector('#main-section');
 const original = mainSection.innerHTML;
 
-const water_element = document.querySelector("#water");
-const fire_element = document.querySelector("#fire");
-const earth_element = document.querySelector("#earth");
+const waterElement = document.querySelector("#water");
+const fireElement = document.querySelector("#fire");
+const earthElement = document.querySelector("#earth");
 
 const result = document.querySelector(".result-text");
 const roundResult = document.createElement("h3");
@@ -77,7 +77,7 @@ const computerScoreDisplay = document.querySelector(".computer-score");
 let playerScore = 0;
 let computerScore = 0;
 
-water_element.addEventListener("click", () => {
+waterElement.addEventListener("click", () => {
     const playerSelection = "water";
     const computerSelection = getComputerChoice();
 
@@ -92,7 +92,7 @@ water_element.addEventListener("click", () => {
     }
 });
 
-fire_element.addEventListener("click", () => {
+fireElement.addEventListener("click", () => {
     const playerSelection = "fire";
     const computerSelection = getComputerChoice();
 
@@ -107,7 +107,7 @@ fire_element.addEventListener("click", () => {
     }
 });
 
-earth_element.addEventListener("click", () => {
+earthElement.addEventListener("click", () => {
     const playerSelection = "earth";
     const computerSelection = getComputerChoice();
 
