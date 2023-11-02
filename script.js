@@ -39,6 +39,15 @@ function gameOver() {
     water_element.disabled = true;
     fire_element.disabled = true;
     earth_element.disabled = true;
+
+    mainSection.innerHTML = `
+        <div>
+            <h1>${finalMessage()}</h1>
+            <h3>Final Score:</h3>
+            <p>Player: ${playerScore} - Computer: ${computerScore}</p>
+            <button>Play Again?</button>
+        </div>
+    `;
 }
 
 function finalMessage() {
