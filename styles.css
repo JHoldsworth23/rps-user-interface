@@ -5,12 +5,14 @@ body {
     margin: 0;
 }
 
-/* title section */
-#title-section {
-    background-color: rgb(207, 166, 115);
+.flex-center {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+#title-section {
+    background-color: rgb(207, 166, 115);
     gap: 28px;
     font-size: 26px;
 }
@@ -32,7 +34,6 @@ body {
     color: rgb(16, 151, 23);
 }
 
-/* MAIN SECTION */
 .heading {
     font-size: 28px;
     margin: 50px 0 0;
@@ -44,13 +45,10 @@ body {
 }
 
 .scoreboard {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     gap: 100px;
 }
 
-.display h1 {
+.player-choice, .computer-choice {
     font-size: 80px;
     margin: 30px 0;
 }
@@ -62,17 +60,11 @@ body {
 }
 
 .cycle-rule {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     gap: 16px;
     font-size: 20px;
 }
 
 .btn-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     gap: 28px;
 }
 
@@ -80,10 +72,7 @@ body {
     width: 150px;
     height: 150px;
     cursor: pointer;
-    display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
     background-color: rgb(110, 84, 52);
     color: #f5f5f5;
     font-size: 28px;
@@ -112,10 +101,9 @@ body {
     border: 3px solid #000;
 }
 
-/* RESTART */
 .restart {
     background-color: #1567C4;
-    color: whitesmoke;
+    color: #f5f5f5;
     width: 650px;
     padding: 20px;
     border-radius: 40px;
@@ -134,9 +122,6 @@ body {
 }
 
 .final-score {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     gap: 80px;
     font-size: 24px;
     font-weight: 600;
@@ -154,7 +139,7 @@ hr {
 .restart-btn {
     background-color: rgb(110, 84, 52);
     cursor: pointer;
-    color: whitesmoke;
+    color: #f5f5f5;
     font-size: 22px;
     padding: 16px 36px;
     border: 3px solid rgb(110, 84, 52);
@@ -167,15 +152,11 @@ hr {
     border: 3px solid #000000;
 }
 
-/* FOOTER SECTION */
 #footer-section {
     position: fixed;
     bottom: 0;
     width: 100%;
     background-color: rgb(207, 166, 115);
-    display: flex;
-    justify-content: center;
-    align-items: center;
     gap: 16px;
     font-size: 18px;
 }

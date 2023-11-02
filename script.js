@@ -54,7 +54,7 @@ function gameOver() {
         <div class="restart">
             <h1 class="winner-text">${finalMessage()}</h1>
             <h3 class="score-heading">Final Score:</h3>
-            <div class="final-score">
+            <div class="final-score flex-center">
                 <p class="score-text">Player: ${playerScore} </p>
                 <p class="score-text">Computer: ${computerScore}</p>
             </div>
@@ -84,7 +84,6 @@ const roundResult = document.createElement("h3");
 
 const playerElement = document.querySelector(".player-choice");
 const computerElement = document.querySelector(".computer-choice");
-
 const playerScoreDisplay = document.querySelector(".player-score");
 const computerScoreDisplay = document.querySelector(".computer-score");
 let playerScore = 0;
