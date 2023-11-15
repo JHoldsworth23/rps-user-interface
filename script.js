@@ -100,3 +100,7 @@ fireElement.addEventListener("click", () => {
 earthElement.addEventListener("click", () => {
     playRound('earth');
 });
+
+const copyright = document.querySelector(".copyright");
+const date = new Date();
+copyright.textContent = `Copyright © ${date.getFullYear()} JHoldsworth23`;
